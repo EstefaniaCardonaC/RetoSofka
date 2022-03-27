@@ -12,6 +12,8 @@ class Jugador():
         self.nombre=nombre
         self.puntaje=puntaje
         
+        if(os.path.exists("Jugadores")==False):
+            os.mkdir("Jugadores")
         os.mkdir("Jugadores/"+self.nombre)
         
         documentoJugador=open("Jugadores/"+self.nombre+"/"+self.nombre+".csv","w")

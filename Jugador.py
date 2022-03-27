@@ -20,5 +20,4 @@ class Jugador():
         documentoJugador.close()
 
 
-Jugador1=Jugador("Estefania",20)
         

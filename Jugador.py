@@ -5,4 +5,20 @@ Created on Sat Mar 26 18:43:53 2022
 @author: estef
 """
 
-print("hola")
+import os
+
+class Jugador():
+    def __init__(self,nombre,puntaje):
+        self.nombre=nombre
+        self.puntaje=puntaje
+        
+        os.mkdir("Jugadores/"+self.nombre)
+        
+        documentoJugador=open("Jugadores/"+self.nombre+"/"+self.nombre+".csv","w")
+        documentoJugador.write("Nombre,Puntaje\n")
+        documentoJugador.write(self.nombre+","+str(self.puntaje))
+        documentoJugador.close()
+
+
+Jugador1=Jugador("Estefania",20)
+        

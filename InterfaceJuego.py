@@ -81,6 +81,7 @@ class Interface(QWidget):
             if(os.path.exists("Categorias")==False or os.path.exists("Categorias/"+"Categoria1")==False or os.path.exists("Categorias/"+"Categoria2")==False or os.path.exists("Categorias/"+"Categoria3")==False or os.path.exists("Categorias/"+"Categoria4")==False or os.path.exists("Categorias/"+"Categoria5")==False):
                 mensaje=QMessageBox(QMessageBox.Warning, "Advertencia", "Debe configurar las preguntas para iniciar el juego", buttons = QMessageBox.Ok, parent=self)
                 mensaje.exec_()
+                self.banderaInicio=True
             else:
                 if(len(os.listdir("Categorias/"+"Categoria1"))<=4 or len(os.listdir("Categorias/"+"Categoria2"))<=4 or len(os.listdir("Categorias/"+"Categoria3"))<=4 or len(os.listdir("Categorias/"+"Categoria4"))<=4 or len(os.listdir("Categorias/"+"Categoria5"))<=4):
                     mensaje=QMessageBox(QMessageBox.Warning, "Advertencia", "Cada categoria debe contar con minimo 5 preguntas\n Categoria 1: "+str(len(os.listdir("Categorias/"+"Categoria1")))
@@ -89,6 +90,7 @@ class Interface(QWidget):
                                         +"\n Categoria 4: "+str(len(os.listdir("Categorias/"+"Categoria4")))
                                         +"\n Categoria 5: "+str(len(os.listdir("Categorias/"+"Categoria5"))), buttons = QMessageBox.Ok, parent=self)
                     mensaje.exec_()
+                    self.banderaInicio=True
                     
                 else:
                     if(self.nombreJugador==""):

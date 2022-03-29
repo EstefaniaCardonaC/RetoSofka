@@ -340,6 +340,7 @@ class Interface(QWidget):
                     
                     mensaje=QMessageBox(QMessageBox.Warning, "GANASTE", "Has ganado el juego!!", buttons = QMessageBox.Ok, parent=self)
                     mensaje.exec_()
+                    self.banderaInicio=True
                     self.hboxInfoJugador.itemAt(0).widget().deleteLater()
                     self.hboxInfoJugador.itemAt(1).widget().deleteLater()
                     self.vboxJuego.itemAt(1).widget().deleteLater()
